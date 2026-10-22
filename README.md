@@ -80,8 +80,8 @@ As required by the MLH Hack Day guidelines, AI tools used during research and de
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/gemmasentinel.git
-cd gemmasentinel
+git clone https://github.com/soumyadeepmagnusx/gemmasentinel2.O.git
+cd gemmasentinel2.O
 ```
 
 ### 2. Install dependencies
