@@ -82,14 +82,15 @@ with st.sidebar:
     
     st.caption("v0.3.0-prebuild • MIT License")
 
-# Helper function to call Gemma-2 via Groq
+# Helper function to call open-weight AI via Groq
 def call_gemma2(prompt: str, system_prompt: str = "You are GemmaSentinel, a world-class code security and database performance expert.") -> str:
     if groq_api_key:
         try:
             from groq import Groq
             client = Groq(api_key=groq_api_key)
+            # Try high-performance open-weight model on Groq
             completion = client.chat.completions.create(
-                model="gemma2-9b-it",
+                model="qwen/qwen3.8-27b",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": prompt}
@@ -99,7 +100,22 @@ def call_gemma2(prompt: str, system_prompt: str = "You are GemmaSentinel, a worl
             )
             return completion.choices[0].message.content
         except Exception as e:
-            return f"⚠️ Groq API Error: {str(e)}\n\n(Falling back to local heuristic analysis...)"
+            # Fallback to secondary open-weight model on Groq
+            try:
+                from groq import Groq
+                client = Groq(api_key=groq_api_key)
+                completion = client.chat.completions.create(
+                    model="openai/gpt-oss-120b",
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.2,
+                    max_tokens=1024,
+                )
+                return completion.choices[0].message.content
+            except Exception as e2:
+                return f"⚠️ Groq API Error: {str(e2)}\n\n(Falling back to local heuristic analysis...)"
     return None
 
 # Helper function for ElevenLabs audio synthesis
