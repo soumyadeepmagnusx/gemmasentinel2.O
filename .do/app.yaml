@@ -1,0 +1,22 @@
+name: gemmasentinel
+region: blr
+services:
+- name: web
+  github:
+    branch: main
+    deploy_on_push: true
+  build_command: pip install -r requirements.txt
+  run_command: streamlit run app.py --server.port 8080 --server.address 0.0.0.0
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  envs:
+  - key: GROQ_API_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: ELEVENLABS_API_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: MONGODB_URI
+    scope: RUN_TIME
+    type: SECRET
