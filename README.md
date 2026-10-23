@@ -8,6 +8,12 @@
 [![Deployment: DigitalOcean](https://img.shields.io/badge/Deploy-DigitalOcean-0080FF.svg)](https://www.digitalocean.com/)
 [![Voice: ElevenLabs](https://img.shields.io/badge/Voice-ElevenLabs%20Audio-orange.svg)](https://elevenlabs.io/)
 [![Database: MongoDB Atlas](https://img.shields.io/badge/DB-MongoDB%20Atlas-brightgreen.svg)](https://www.mongodb.com/cloud/atlas)
+[![Demo Video: Watch](https://img.shields.io/badge/Demo%20Video-Watch%20Walkthrough-red.svg?logo=youtube)](demo.mp4)
+
+---
+
+## 📺 Live Video Walkthrough
+▶️ **[Click here to watch the full HD narrated walkthrough video (demo.mp4)](demo.mp4)** with real-time AST audit, ElevenLabs voice alerts, Oracle SQL optimization, and MongoDB Atlas telemetry.
 
 ---
 
