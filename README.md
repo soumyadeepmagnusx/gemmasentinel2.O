@@ -135,5 +135,22 @@ Open **`http://localhost:8501`** in your browser.
 
 ---
 
+## 💻 Headless CLI & Benchmark Usage
+
+GemmaSentinel also includes a standalone command-line interface for CI/CD environments:
+
+```bash
+# Scan any source code file headlessly
+python cli.py scan --file app.py
+
+# Test Oracle SQL query optimization
+python cli.py optimize-sql --query "SELECT * FROM orders WHERE TO_CHAR(order_date, 'YYYY') = '2026'"
+
+# Run the automated CWE vulnerability benchmark suite
+python scripts/benchmark_eval.py
+```
+
+---
+
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE) — free and open for the community.
