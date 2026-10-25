@@ -13,6 +13,12 @@ env/
 # Streamlit config & secrets
 .streamlit/secrets.toml
 
+# Video build artifacts
+clean_voice.m4a
+concat.txt
+create_frames.py
+video_frames/
+
 # OS & IDE
 .DS_Store
 Thumbs.db
