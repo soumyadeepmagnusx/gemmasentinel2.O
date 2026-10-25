@@ -1,0 +1,19 @@
+name: 💡 Feature Request
+description: Propose a new feature, model harness, or database optimizer extension.
+title: "[FEAT]: "
+labels: ["enhancement", "hacktoberfest"]
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      placeholder: Describe the problem your feature solves...
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution / API Design
+      placeholder: How should this feature be implemented or exposed?
+    validations:
+      required: true
