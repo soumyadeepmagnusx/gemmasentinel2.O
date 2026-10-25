@@ -1,0 +1,59 @@
+{
+  "version": "1.2.0",
+  "rules": [
+    {
+      "id": "CWE-89",
+      "name": "SQL Injection (Improper Neutralization of Special Elements)",
+      "severity": "CRITICAL",
+      "cvss": 9.8,
+      "pattern": "SELECT.*\\+.*|cursor\\.execute\\(.*%s.*\\)",
+      "remediation": "Use parameterized bind variables (:param or ?). Never concatenate raw strings.",
+      "category": "Injection"
+    },
+    {
+      "id": "CWE-798",
+      "name": "Use of Hard-coded Credentials",
+      "severity": "HIGH",
+      "cvss": 8.5,
+      "pattern": "(api_key|secret|password|token)\\s*=\\s*['\"][A-Za-z0-9_-]{20,}['\"]",
+      "remediation": "Store secrets in environment variables or cloud secret managers.",
+      "category": "Credential Management"
+    },
+    {
+      "id": "CWE-502",
+      "name": "Deserialization of Untrusted Data",
+      "severity": "CRITICAL",
+      "cvss": 9.8,
+      "pattern": "pickle\\.loads?\\(|yaml\\.load\\(",
+      "remediation": "Use safe deserializers like json.loads() or yaml.safe_load().",
+      "category": "Input Validation"
+    },
+    {
+      "id": "CWE-1333",
+      "name": "Regular Expression Denial of Service (ReDoS)",
+      "severity": "HIGH",
+      "cvss": 7.5,
+      "pattern": "re\\.compile\\(.*(\\+|\\*).*(\\+|\\*).*\\)",
+      "remediation": "Avoid nested quantifiers in regular expressions or use linear-time regex engines.",
+      "category": "Denial of Service"
+    },
+    {
+      "id": "CWE-79",
+      "name": "Improper Neutralization of Input During Web Page Generation (XSS)",
+      "severity": "MEDIUM",
+      "cvss": 6.1,
+      "pattern": "innerHTML\\s*=|render_template_string\\(",
+      "remediation": "Sanitize and escape all user input before rendering in DOM/HTML templates.",
+      "category": "Cross-Site Scripting"
+    },
+    {
+      "id": "CWE-22",
+      "name": "Improper Limitation of a Pathname to a Restricted Directory (Path Traversal)",
+      "severity": "HIGH",
+      "cvss": 8.6,
+      "pattern": "open\\(.*\\.\\./.*\\)|os\\.path\\.join\\(.*request\\.",
+      "remediation": "Validate path against an absolute base directory using os.path.commonpath().",
+      "category": "File Handling"
+    }
+  ]
+}
