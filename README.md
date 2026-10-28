@@ -148,6 +148,19 @@ python cli.py optimize-sql --query "SELECT * FROM orders WHERE TO_CHAR(order_dat
 
 # Run the automated CWE vulnerability benchmark suite
 python scripts/benchmark_eval.py
+
+# Export findings to OASIS SARIF format for GitHub Code Scanning
+python scripts/sarif_exporter.py results.sarif
+```
+
+### Quick Developer Commands (Makefile)
+```bash
+make install     # Install dependencies
+make run         # Launch Streamlit dashboard
+make scan        # Run headless security scan
+make sarif       # Generate SARIF security report
+make benchmark   # Execute CWE benchmark suite
+make test        # Run unit tests
 ```
 
 ---
