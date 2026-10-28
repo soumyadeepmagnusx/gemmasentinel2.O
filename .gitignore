@@ -19,6 +19,9 @@ concat.txt
 create_frames.py
 video_frames/
 
+# Scan report outputs
+*.sarif
+
 # OS & IDE
 .DS_Store
 Thumbs.db
