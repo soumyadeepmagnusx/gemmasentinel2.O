@@ -151,6 +151,9 @@ python scripts/benchmark_eval.py
 
 # Export findings to OASIS SARIF format for GitHub Code Scanning
 python scripts/sarif_exporter.py results.sarif
+
+# Run repository security compliance & health audit
+python scripts/security_health.py
 ```
 
 ### Quick Developer Commands (Makefile)
@@ -160,6 +163,7 @@ make run         # Launch Streamlit dashboard
 make scan        # Run headless security scan
 make sarif       # Generate SARIF security report
 make benchmark   # Execute CWE benchmark suite
+make health      # Run security health audit & compliance check
 make test        # Run unit tests
 ```
 

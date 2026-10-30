@@ -21,6 +21,7 @@ video_frames/
 
 # Scan report outputs
 *.sarif
+security_health.json
 
 # OS & IDE
 .DS_Store

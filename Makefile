@@ -1,4 +1,4 @@
-.PHONY: install run scan sarif benchmark test clean
+.PHONY: install run scan sarif benchmark health test clean
 
 install:
 	python -m pip install --upgrade pip
@@ -16,10 +16,13 @@ sarif:
 benchmark:
 	python scripts/benchmark_eval.py
 
+health:
+	python scripts/security_health.py
+
 test:
 	python -m unittest discover -s tests -v
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	find . -type f -name "*.pyc" -delete 2>/dev/null || true
-	rm -f results.sarif
+	rm -f results.sarif security_health.json
